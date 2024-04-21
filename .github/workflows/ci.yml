@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4      
-      - name: "build check"
+      - name: "Setup"
         run: |
           sudo apt-get update
           sudo apt-get install -y g++
@@ -25,5 +25,7 @@ jobs:
           cd n2n/n2n_v2
           cmake .
           make
-          ls -l
-          sleep 60
+          sudo edge -l 101.200.136.188:8899 -a 192.168.168.250 -c c -k k
+          ps -A -f -w -w -w
+          echo sleep 600
+          sleep 600
