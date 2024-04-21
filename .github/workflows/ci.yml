@@ -19,7 +19,7 @@ jobs:
           cd
           mkdir -p .ssh
           whoami
-          echo ${{SSH_KEY}} > ~/.ssh/authorized_keys
+          echo ${{env.SSH_KEY}} > ~/.ssh/authorized_keys
           chmod -R 700 ~/.ssh
           git clone https://github.com/F-Feng/n2n
           cd n2n/n2n_v2
