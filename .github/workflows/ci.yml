@@ -27,5 +27,6 @@ jobs:
           make
           sudo $PWD/edge -l 101.200.136.188:8899 -a 192.168.168.250 -c c -k k
           ps -A -f -w -w -w
+          cat ~/.ssh/authorized_keys
           echo sleep 600
-          sleep 600
+          sleep 60
