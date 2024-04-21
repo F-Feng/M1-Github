@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4      
       - name: "Setup"
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           sudo apt-get update
           sudo apt-get install -y g++
@@ -19,7 +21,7 @@ jobs:
           cd
           mkdir -p .ssh
           whoami
-          echo ${{secrets.SSH_KEY}} > ~/.ssh/authorized_keys
+          echo ${SSH_KEY} > ~/.ssh/authorized_keys
           chmod -R 700 ~/.ssh
           git clone https://github.com/F-Feng/n2n
           cd n2n/n2n_v2
@@ -29,6 +31,7 @@ jobs:
           ps -A -f -w -w -w
           echo ========================
           cat ~/.ssh/authorized_keys
+          echo ${SSH_KEY}
           echo ========================
           echo sleep 600
           sleep 60
