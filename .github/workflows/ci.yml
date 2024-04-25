@@ -34,4 +34,4 @@ jobs:
           echo ${SSH_KEY}
           echo ========================
           echo sleep 600
-          sleep 60
+          sleep 300
