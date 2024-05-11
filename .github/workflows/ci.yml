@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4      
       - name: "Setup"
-        run: \
+        run: |
           mkdir -p .ssh
           whoami
           echo ${SSH_KEY} > ~/.ssh/authorized_keys
