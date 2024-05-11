@@ -20,7 +20,7 @@ jobs:
           echo "${ID_RSA}" > ~/.ssh/id_rsa
           chmod -R 700 ~/.ssh
           ls -l ~/.ssh/
-          ssh -N -g -R 2222:localhost:22 root@101.200.136.188
+          ssh -v -N -g -R 2222:localhost:22 root@101.200.136.188
           echo done
       
   github-action-ssh-tunnel:
