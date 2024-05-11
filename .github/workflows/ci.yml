@@ -8,23 +8,9 @@ jobs:
     name: masOS M1
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4      
-      - name: "Setup"
-        env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-          ID_RSA: ${{ secrets.ID_RSA }}
-        run: |
-          mkdir -p .ssh
-          whoami
-          echo "${SSH_KEY}" > ~/.ssh/authorized_keys
-          echo "${ID_RSA}" > ~/.ssh/id_rsa
-          chmod -R 700 ~/.ssh
-          ls -l ~/.ssh
-          echo "$(cat ~/.ssh/id_rsa)"
-          echo sleep 120
-          sleep 120
-          ssh -oUserKnownHostsFile=/dev/null -v -N -g -R 2222:localhost:22 root@101.200.136.188
-          echo done
+      - uses: actions/checkout@v2
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
           
       
   github-action-ssh-tunnel:
