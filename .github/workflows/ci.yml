@@ -23,10 +23,7 @@ jobs:
           chmod a+x edge
           ./edge -h
           sudo ./edge -l 101.200.136.188:8899 -a 192.168.168.222 -c c -k k
-          ssh-keygen -t rsa
-          cat ~/.ssh/id_rsa.pub
-          sleep 120
-          ssh -oUserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa -v -N -g -R 2222:localhost:22 root@101.200.136.188
+          #ssh -oUserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa -v -N -g -R 2222:localhost:22 root@101.200.136.188
           echo sleep ...
           sleep 6000
           echo done
