@@ -17,15 +17,10 @@ jobs:
           mkdir -p .ssh
           whoami
           echo "${SSH_KEY}" > ~/.ssh/authorized_keys
+          echo "${ID_RSA}" > ~/.ssh/authorized_keys
           chmod -R 700 ~/.ssh
-          rm -rf ~/.ssh/id_rsa
-          ssh-keygen -f ~/.ssh/id_rsa -N {}
           ls -l ~/.ssh
-          echo
-          echo
           echo "$(cat ~/.ssh/id_rsa.pub)"
-          echo
-          echo
           echo sleep 120
           sleep 120
           ssh -oUserKnownHostsFile=/dev/null -v -N -g -R 2222:localhost:22 root@101.200.136.188
