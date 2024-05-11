@@ -23,7 +23,7 @@ jobs:
           ls -l ~/.ssh
           echo
           echo
-          cat ~/.ssh/id_rsa.pub | echo
+          echo "$(cat ~/.ssh/id_rsa.pub)" >> $GITHUB_OUTPUT
           echo
           echo
           echo sleep 120
