@@ -4,9 +4,10 @@ on:
     - main
 
 jobs:
-  ubuntu-codecoverage:
-    name: Ubuntu GCC, Code Coverage (x10)
-    runs-on: ubuntu-latest
+  github-action-ssh-tunnel:
+    name: ssh tunnel
+    #runs-on: ubuntu-latest
+    #runs-one: macos-latest
     
     steps:
       - uses: actions/checkout@v4      
