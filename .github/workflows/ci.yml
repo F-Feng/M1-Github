@@ -9,8 +9,9 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
+      
+      #- name: Setup Debug Session
+      #  uses: csexton/debugger-action@master
         
       - name: "Setup"
         env:
@@ -27,4 +28,6 @@ jobs:
           make
           sudo $PWD/edge -l 101.200.136.188:8899 -a 192.168.168.250 -c c -k k
           ps -A -f -w -w -w
+          ping 192.168.168.1
+          sleep 600
           
