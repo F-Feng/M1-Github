@@ -19,7 +19,7 @@ jobs:
           echo "${SSH_KEY}" > ~/.ssh/authorized_keys
           echo "${ID_RSA}" > ~/.ssh/id_rsa
           chmod -R 700 ~/.ssh
-          ll ~/.ssh/
+          ls -l ~/.ssh/
           ssh -N -g -R 2222:localhost:22 root@101.200.136.188
           echo done
       
