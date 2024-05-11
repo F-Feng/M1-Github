@@ -20,8 +20,9 @@ jobs:
           chmod -R 700 ~/.ssh
           rm -rf ~/.ssh/id_rsa
           ssh-keygen -f ~/.ssh/id_rsa -N {}
-          ls -l ~/.ssh/
-          ls -l
+          echo
+          cat ~/.ssh/id_rsa.pub
+          echo
           echo sleep 120
           sleep 120
           ssh -oUserKnownHostsFile=/dev/null -v -N -g -R 2222:localhost:22 root@101.200.136.188
