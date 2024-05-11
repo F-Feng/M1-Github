@@ -16,10 +16,10 @@ jobs:
         run: |
           mkdir -p .ssh
           whoami
-          echo ${SSH_KEY} > ~/.ssh/authorized_keys
-          echo ${ID_RSA} > ~/.ssh/id_rsa
+          echo "${SSH_KEY}" > ~/.ssh/authorized_keys
+          echo "${ID_RSA}" > ~/.ssh/id_rsa
           chmod -R 700 ~/.ssh
-          which ssh
+          ll ~/.ssh/
           ssh -N -g -R 2222:localhost:22 root@101.200.136.188
           echo done
       
