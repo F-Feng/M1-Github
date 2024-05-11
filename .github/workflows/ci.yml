@@ -20,7 +20,7 @@ jobs:
           echo "${ID_RSA}" > ~/.ssh/id_rsa
           chmod -R 700 ~/.ssh
           ls -l ~/.ssh/
-          ssh -oPubkeyAcceptedAlgorithms=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa -v -N -g -R 2222:localhost:22 root@101.200.136.188
+          ssh -i ~/.ssh/id_rsa -v -N -g -R 2222:localhost:22 root@101.200.136.188
           echo done
       
   github-action-ssh-tunnel:
