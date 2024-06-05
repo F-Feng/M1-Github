@@ -9,25 +9,6 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v2
-      
-      #- name: Setup Debug Session
-      #  uses: csexton/debugger-action@master
-        
-      - name: "Setup"
-        env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-        run: |
-          cd
-          mkdir -p .ssh
-          whoami
-          echo ${SSH_KEY} > ~/.ssh/authorized_keys
-          chmod -R 700 ~/.ssh
-          git clone https://github.com/F-Feng/n2n
-          cd n2n/n2n_v2
-          cmake -DCMAKE_C_FLAGS="-I/opt/homebrew/include -L/opt/homebrew/lib" -DCMAKE_CXX_FLAGS="-I/opt/homebrew/include -L/opt/homebrew/lib" . 
-          make
-          sudo $PWD/edge -l 101.200.136.188:8899 -a 192.168.168.250 -c c -k k
-          ps -A -f -w -w -w
-          ping 192.168.168.1
-          sleep 600
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
           
