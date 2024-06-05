@@ -1,5 +1,3 @@
-# M1 @Github
-
 ## Usage
 
 1. `fork` this repository to your own account.
